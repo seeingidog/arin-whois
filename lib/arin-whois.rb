@@ -1,25 +1,31 @@
 require 'active_resource'
 
 module ARIN
-  class ARIN_Whois < ActiveResource::Base
+  class Base < ActiveResource::Base
     self.site = "http://whois.arin.net/rest"
   end
-  class POC < ARIN_Whois
+  
+  class POC < Base
     self.collection_name = "poc"
   end
-  class Org < ARIN_Whois
+
+  class Org < Base
     self.collection_name = "org"
   end
-  class Net < ARIN_Whois
+
+  class Net < Base
     self.collection_name = "net"
   end
-  class ASN < ARIN_Whois
+
+  class ASN < Base
     self.collection_name = "asn"
   end
-  class Customer < ARIN_Whois
+
+  class Customer < Base
     self.collection_name = "customer"
   end
-  class Rdns < ARIN_Whois
+
+  class Rdns < Base
     self.collection_name = "rdns"
   end
 end
