@@ -1,6 +1,11 @@
 = arin-whois
 
-Description goes here.
+API wrapper for ARIN's REST interface to whois/POC data.
+
+Example:
+    >> ARIN::ASN.find(32244)
+	=> #<ARIN::ASN:0x00000100d4cd70 @attributes={"xmlns"=>"http://www.arin.net/whoisrws/core/v1", "xmlns:ns2"=>"http://www.arin.net/whoisrws/rdns/v1", "termsOfUse"=https://www.arin.net/whois_tou.html", "registrationDate"=>"2004-03-26T14:25:08-05:00", "ref"=>"http://whois.arin.net/rest/asn/AS32244", "endAsNumber"=>"32244", "handle"=>"AS32244", "name"=>"LIQUID-WEB-INC", "orgRef"=>"http://whois.arin.net/rest/org/LQWB", "startAsNumber"=>"32244", "updateDate"=>"2004-03-26T14:25:08-05:00prefix_options{}
+	
 
 == Contributing to arin-whois
  
