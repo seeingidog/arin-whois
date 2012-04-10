@@ -1,31 +1,58 @@
-require 'active_resource'
+require 'rest_client'
+require 'json'
+require 'hashie'
 
 module ARIN
-  class Base < ActiveResource::Base
-    self.site = "http://whois.arin.net/rest"
+  class Base
+    def self.resource
+      RestClient::Resource.new 'http://whois.arin.net/rest'
+    end
+    
+    def self.parse_and_objectify(rootel, query)
+      Hashie::Mash.new(JSON.parse(resource["#{rootel}/#{query}.json"].get)[rootel])
+    end
   end
   
   class POC < Base
-    self.collection_name = "poc"
+    
+    def self.find(query)    
+      rootel = 'poc'
+      parse_and_objectify(rootel, query)
+    end
   end
 
   class Org < Base
-    self.collection_name = "org"
+    def self.find(query)  
+      rootel = 'org'
+      parse_and_objectify(rootel, query)
+    end
   end
 
   class Net < Base
-    self.collection_name = "net"
+    def self.find(query)  
+      rootel = 'net'
+      parse_and_objectify(rootel, query)
+    end
   end
 
   class ASN < Base
-    self.collection_name = "asn"
+    def self.find(query)
+      rootel = 'asn'
+      parse_and_objectify(rootel, query)
+    end
   end
 
   class Customer < Base
-    self.collection_name = "customer"
+    def self.find(query) 
+      rootel = 'customer'
+      parse_and_objectify(rootel, query)
+    end
   end
 
   class Rdns < Base
-    self.collection_name = "rdns"
+    def self.find(query) 
+      rootel = 'rdns'
+      parse_and_objectify(rootel, query)
+    end
   end
 end
