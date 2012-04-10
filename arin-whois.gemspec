@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "arin-whois.gemspec",
     "lib/arin-whois.rb",
     "spec/arin-whois_spec.rb",
     "spec/spec_helper.rb"
