@@ -8,8 +8,7 @@ Ruby wrapper for ARIN's REST interface to whois/POC data. Currently only impleme
 
 == Example
     >> ARIN::ASN.find(32244)
-    => #<ARIN::ASN:0x00000100d4cd70 @attributes={"xmlns"=>"http://www.arin.net/whoisrws/core/v1", "xmlns:ns2"=>"http://www.arin.net/whoisrws/rdns/v1", "termsOfUse"=https://www.arin.net/whois_tou.html", "registrationDate"=>"2004-03-26T14:25:08-05:00", "ref"=>"http://whois.arin.net/rest/asn/AS32244", "endAsNumber"=>"32244", "handle"=>"AS32244", "name"=>"LIQUID-WEB-INC", "orgRef"=>"http://whois.arin.net/rest/org/LQWB", "startAsNumber"=>"32244", "updateDate"=>"2004-03-26T14:25:08-05:00prefix_options{}
-	
+    => #<Hashie::Mash @termsOfUse="https://www.arin.net/whois_tou.html" @xmlns=#<Hashie::Mash $="http://www.arin.net/whoisrws/core/v1" ns2="http://www.arin.net/whoisrws/rdns/v1" ns3="http://www.arin.net/whoisrws/netref/v2"> endAsNumber=#<Hashie::Mash $="32244"> handle=#<Hashie::Mash $="AS32244"> name=#<Hashie::Mash $="LIQUID-WEB-INC"> orgRef=#<Hashie::Mash $="http://whois.arin.net/rest/org/LQWB" @handle="LQWB" @name="Liquid Web, Inc."> ref=#<Hashie::Mash $="http://whois.arin.net/rest/asn/AS32244"> registrationDate=#<Hashie::Mash $="2004-03-26T14:25:08-05:00"> startAsNumber=#<Hashie::Mash $="32244"> updateDate=#<Hashie::Mash $="2012-02-24T09:44:34-05:00">>	
 
 == Copyright
 
