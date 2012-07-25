@@ -1,5 +1,7 @@
 = arin-whois
 
+{<img src="https://secure.travis-ci.org/seeingidog/arin-whois.png?branch=master" alt="Build Status" />}[http://travis-ci.org/seeingidog/arin-whois]
+
 Ruby wrapper for ARIN's REST interface to whois/POC data. Currently only implements read-only, not provisioning requests.
 
 == Installation
