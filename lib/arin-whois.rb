@@ -16,8 +16,8 @@ module ARIN
       end
     end
     
-    def self.parse_and_objectify(rootel, query)
-      Hashie::Mash.new(JSON.parse(get_resource(rootel, query))[rootel])
+    def self.parse_and_objectify(rootel, query, parseel = rootel)
+       Hashie::Mash.new(JSON.parse(get_resource(rootel, query))[parseel])
     end
     
     def self.root_element(classname)
@@ -61,6 +61,12 @@ module ARIN
   class Rdns < Base
     def self.find(query) 
       parse_and_objectify(root_element(self.name), query)
+    end
+  end
+
+  class IP < Base
+    def self.find(query)
+      parse_and_objectify(root_element(self.name), query, 'net')
     end
   end
 end
